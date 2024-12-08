@@ -30,7 +30,7 @@ resource "aws_instance" "public_ec2" {
   subnet_id              = aws_subnet.subnet_public.id
   key_name               = data.aws_key_pair.public_key.key_name
   vpc_security_group_ids = [aws_security_group.public_instance.id]
-  user_data              = file("/scripts/user_data.sh")
+  user_data              = file("scripts/user_data.sh")
   tags = {
     Name = "${each.value}-${local.sufix}"
   }
@@ -64,7 +64,7 @@ resource "aws_instance" "public_ec2_mon" {
   subnet_id              = aws_subnet.subnet_public.id
   key_name               = data.aws_key_pair.public_key.key_name
   vpc_security_group_ids = [aws_security_group.public_instance.id]
-  user_data              = file("/scripts/user_data.sh")
+  user_data              = file("scripts/user_data.sh")
   tags = {
     Name = "Monitoreo Instancias"
   }
