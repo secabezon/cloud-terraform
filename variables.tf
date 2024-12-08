@@ -40,3 +40,9 @@ variable "ingress_ports_list" {
   description="Puerto de ingreso a la EC2"
   type=list(number)
 }
+
+variable "access_key"{
+}
+
+variable "secret_key"{
+}
